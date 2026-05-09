@@ -24,7 +24,7 @@ body,html{
 }
 
 
-.textarea {
+.display {
     width: 100%;
     height: 100%;
 
@@ -35,14 +35,14 @@ body,html{
     color: #ffffff;
 
     font-size: 1.8rem;
-    line-height: 1.4;
+    line-height: 1.2;
 
     resize: none;
     overflow-y: auto;
 
     text-align: right;
     white-space: pre-wrap;
-
+    
     font-family:"Roboto", sans-serif;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
