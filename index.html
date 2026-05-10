@@ -1,98 +1,175 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculator</title>
 
-        <link rel="stylesheet" href="style.css">
+<head>
 
-        <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <meta charset="UTF-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Calculator</title>
 
-    </head>
+    <link rel="stylesheet" href="style.css">
 
-    <body>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <div class="calc-container">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-            <div class="calc">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-                <div class="display">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="calc-container">
+
+        <div class="calc">
+
+                 <!-- DISPLAY -->
+
+            <div class="display">
+
+                <textarea class="textarea"></textarea>
+
+            </div>
+            
+                 <!-- SCIENTIFIC PANEL -->
+            
+            <div class="scientific-panel">
+
+                <div class="btn scientific-btn">(</div>
+
+                <div class="btn scientific-btn">)</div>
+
+                <div class="btn scientific-btn">mc</div>
+
+                <div class="btn scientific-btn">m+</div>
+
+                <div class="btn scientific-btn">m-</div>
+
+                <div class="btn scientific-btn">mr</div>
+
+                <div class="btn scientific-btn">2nd</div>
+
+                <div class="btn scientific-btn" data-fn="^2">x²</div>
+
+                <div class="btn scientific-btn" data-fn="^3">x³</div>
+
+                <div class="btn scientific-btn" data-fn="^">xʸ</div>
+
+                <div class="btn scientific-btn" data-fn="exp">eˣ</div>
+
+                <div class="btn scientific-btn" data-fn="10^">10ˣ</div>
+
+                <div class="btn scientific-btn" data-fn="1/">1/x</div>
+
+                <div class="btn scientific-btn" data-fn="sqrt">²√</div>
+
+                <div class="btn scientific-btn" data-fn="cbrt">³√</div>
+
+                <div class="btn scientific-btn" data-fn="ln">ln</div>
+
+                <div class="btn scientific-btn" data-fn="log">log₁₀</div>
+
+                <div class="btn scientific-btn">!</div>
+
+                <div class="btn scientific-btn" data-fn="sin">sin</div>
+
+                <div class="btn scientific-btn" data-fn="cos">cos</div>
+
+                <div class="btn scientific-btn" data-fn="tan">tan</div>
+
+                <div class="btn scientific-btn" data-fn="C">nCr</div>
+
+                <div class="btn scientific-btn" data-fn="P">nPr</div>
+
+                <div class="btn scientific-btn" data-fn="sinh">sinh</div>
+
+                <div class="btn scientific-btn" data-fn="cosh">cosh</div>
+
+                <div class="btn scientific-btn" data-fn="tanh">tanh</div>
+
+                <div class="btn scientific-btn" data-fn="π">π</div>
+
+                <div class="btn scientific-btn" data-fn="Rand">Rand</div>
+
+                <div class="btn normal-btn comma-btn">,</div>
+            </div>
+
+
+                 <!-- NORMAL BUTTONS -->
+
+            <div class="btn-container">
+
+                <div class="btn normal2-btn">AC</div>
+
+                <div class="btn normal2-btn" data-action="delete">
+
+                    <i class="fa-solid fa-delete-left"></i>
+
+                </div>
+
+                <div class="btn normal2-btn"> %</div>
+
+                <div class="btn operator"> &divide;</div>
+
+                <div class="btn normal-btn">7</div>
+
+                <div class="btn normal-btn">8</div>
+
+                <div class="btn normal-btn"> 9</div>
+
+                <div class="btn operator"> &times;</div>
+
+                <div class="btn normal-btn">4</div>
+
+                <div class="btn normal-btn"> 5</div>
+
+                <div class="btn normal-btn"> 6</div>
+
+                <div class="btn operator">&minus;</div>
+
+                <div class="btn normal-btn">1</div>
+
+                <div class="btn normal-btn">2</div>
                     
-                </div>
 
-                <div class="btn-container">
+                <div class="btn normal-btn">3</div>
 
-                    <div class="btn scientific-btn">(</div>
-                    <div class="btn scientific-btn">)</div>
-                    <div class="btn scientific-btn">mc</div>
-                    <div class="btn scientific-btn">m+</div>
-                    <div class="btn scientific-btn">m-</div>
-                    <div class="btn scientific-btn">mr</div>
-                    <div class="btn normal2-btn">AC</div>
-                    <div class="btn normal2-btn" data-action="delete">
-                         <i class="fa-solid fa-delete-left"></i>
-                    </div>
-                    <div class="btn normal2-btn">%</div>
-                    <div class="btn operator">&divide;</div>
+                <div class="btn operator">&plus;</div>
 
-                    <div class="btn scientific-btn">2nd</div>
-                    <div class="btn scientific-btn" data-fn="^2">x&#178;</div>
-                    <div class="btn scientific-btn" data-fn="^3">x&#179;</div>
-                    <div class="btn scientific-btn" data-fn="^"><span>x<sup>y</sup></span></div>
-                    <div class="btn scientific-btn" data-fn="e^"><span>e<sup>x</sup></span></div>
-                    <div class="btn scientific-btn" data-fn="10^"><span>10<sup>x</sup></span></div>
-                    <div class="btn normal-btn">7</div>
-                    <div class="btn normal-btn">8</div>
-                    <div class="btn normal-btn">9</div>
-                    <div class="btn operator">&times;</div>
+                
+                
+                <div class="btn toggle-btn">
 
-                    <div class="btn scientific-btn" data-fn="1/"><span><sup>1</sup>&#8725;<sub>x</sub></span></div>
-                    <div class="btn scientific-btn" data-fn="√"><span><sup>2</sup>&radic;x</span></div>
-                    <div class="btn scientific-btn" data-fn="∛"><span><sup>3</sup>&radic;x</span></i></div>
-                    <div class="btn scientific-btn" data-fn="√"><span><sup>y</sup>&radic;x</span></i></div>
-                    <div class="btn scientific-btn" data-fn="ln">ln</div>
-                    <div class="btn scientific-btn" data-fn="log10"><span>log<sub>10</sub></span></div>
-                    <div class="btn normal-btn">4</div>
-                    <div class="btn normal-btn">5</div>
-                    <div class="btn normal-btn">6</div>
-                    <div class="btn operator">&minus;</div>
-
-                    <div class="btn scientific-btn">!</div>
-                    <div class="btn scientific-btn" data-fn="sin" id="asin">sin</div>
-                    <div class="btn scientific-btn" data-fn="cos" id="acos">cos</div>
-                    <div class="btn scientific-btn" data-fn="tan" id="atan">tan</div>
-                    <div class="btn scientific-btn" data-fn="C"><span><sup>n</sup>c<sub>r</sub></span></div>
-                    <div class="btn scientific-btn" data-fn="P"><span><sup>n</sup>p<sub>r</sub></span></div>
-                    <div class="btn normal-btn">1</div>
-                    <div class="btn normal-btn">2</div>
-                    <div class="btn normal-btn">3</div>
-                    <div class="btn operator">&plus;</div>
-
-                    <div class="btn scientific-btn"><i class="fa-solid fa-calculator"></i></div>
-                    <div class="btn scientific-btn" data-fn="sinh">sinh</div>
-                    <div class="btn scientific-btn" data-fn="cosh">cosh</div>
-                    <div class="btn scientific-btn" data-fn="tanh">tanh</div>
-                    <div class="btn scientific-btn" data-fn="π">&pi;</div>
-                    <div class="btn scientific-btn" data-fn="Rand">Rand</div>
-                    <div class="btn normal-btn" >&comma;</div>
-                    <div class="btn normal-btn">0</div>
-                    <div class="btn normal-btn">.</div>
-                    <div class="btn operator">=</div>
+                    <i class="fa-solid fa-calculator"></i>
 
                 </div>
 
-            </div>          
+                <div class="btn normal-btn">0</div>
 
+                <div class="btn normal-btn">.</div>
+
+                <div class="btn operator">=</div>
+
+            </div>
         </div>
+    </div>
 
-        <script type="module" src="app.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
 
-    </body>
 </html>
+

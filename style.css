@@ -1,110 +1,234 @@
-body,html{
+
+body,
+html{
     margin:0;
     padding:0;
     font-family:"Roboto", sans-serif;
+    background:#000;
+    overflow-x:hidden;
 }
+
+
+   /* MAIN CONTAINER */
 
 .calc-container{
-    height:100vh;
+
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
+    padding:1rem;
+    box-sizing:border-box;
 }
+
+
+
+   /* CALCULATOR */
+
 
 .calc{
-    display:grid;
-    grid-template-rows:1.75fr 3.5fr;
-    gap:1.25rem;
-    height:600px;
-    width:750px;
-    border:0.25rem solid gray;
-    background-color:black;
+    width:100%;
+    max-width:750px;
+    background:#111;
+    border:4px solid #444;
     border-radius:2rem;
-    padding:1rem 1.5rem;
+    padding:1rem;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
 }
 
 
-.display {
-    width: 100%;
-    height: 100%;
 
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.25);
+   /* DISPLAY */
 
-    background: #1e1e1e;
-    color: #ffffff;
 
-    font-size: 1.8rem;
-    line-height: 1.2;
+.display{
+    width:100%;
+}
 
-    resize: none;
-    overflow-y: auto;
-
-    text-align: right;
-    white-space: pre-wrap;
-    
+.textarea{
+    width:100%;
+    height:140px;
+    background:#1e1e1e;
+    color:white;
+    border-radius:1rem;
+    border:1px solid rgba(255,255,255,0.2);
+    resize:none;
+    outline:none;
+    box-sizing:border-box;
+    padding:1rem;
+    font-size:2rem;
+    text-align:right;
+    overflow-y:auto;
     font-family:"Roboto", sans-serif;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    box-shadow:
+        inset 0 0 10px rgba(0,0,0,0.5);
 }
 
-
-
-.btn-container{
-    display:grid;
-    grid-template-columns:repeat(10,1fr);
-    grid-template-rows:repeat(5,1fr);
-    gap:0.25rem;
-    justify-items:center;
-    align-items:center;
+.textarea:focus{
+    border-color:white;
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.15);
 }
 
-.btn-container div{
-color:white;
-}
+   /* BUTTON BASE */
 
 .btn{
-    display:flex;
-    height:75%;
-    width:85%;
-    background-color:rgba(240,255,255,0.114);
+    width:60px;
+    height:60px;
     border-radius:50%;
+    display:flex;
     align-items:center;
     justify-content:center;
-    font-size:1.25rem;
-    font-weight:400;
+    background:
+        rgba(255,255,255,0.08);
+    color:white;
     cursor:pointer;
+    user-select:none;
+    transition:0.2s;
+    font-size:1.2rem;
+    font-weight:500;
 }
+
 
 .btn:hover{
-    background-color:rgba(255,255,255,0.25);
+
+    background:
+        rgba(255,255,255,0.16);
 }
 
-span sup,
-span sub{
-    font-size:0.85rem;
-}
 
-.operator{
-    background-color:orange;
-    color:white;
-    font-size:1.75rem;
-    font-weight:bold;
-}
-
-.operator:hover{
-        background-color:rgb(255,140,0);
-}
+   /* NORMAL BUTTONS */
 
 .normal-btn{
-    background-color:rgba(240,255,255,0.164);
-    font-size:1.5rem;
+    background:rgba(255,255,255,0.12);
+    font-size:1.4rem;
     font-weight:bold;
 }
 
 .normal2-btn{
-    background-color:rgba(240,255,255,0.299);
-    font-size:1.5rem;
+    background:rgba(255,255,255,0.22);
+    font-size:1.4rem;
     font-weight:bold;
 }
 
+
+   /* OPERATORS */
+
+.operator{
+    background:orange;
+    font-size:1.6rem;
+    font-weight:bold;
+}
+
+
+.operator:hover{
+    background:darkorange;
+}
+
+
+   /* SCIENTIFIC PANEL */
+
+.scientific-panel{
+    display:none;
+    grid-template-columns:repeat(6,1fr);
+    gap:0.6rem;
+    justify-items:center;
+}
+
+
+/* show state */
+
+.scientific-panel.show{
+    display:grid;
+}
+
+   /* NORMAL BUTTON PANEL */
+
+.btn-container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:0.8rem;
+    justify-items:center;
+}
+
+
+   /* TOGGLE BUTTON */
+
+.toggle-btn{
+    background:orange;
+    color:white;
+}
+
+
+.toggle-btn:hover{
+    background:darkorange;
+}
+
+
+   /* MOBILE RESPONSIVE */
+
+@media(max-width:700px){
+
+    .calc{
+        max-width:380px;
+        padding:1rem;
+        border-radius:1.5rem;
+    }
+
+    .textarea{
+        height:120px;
+        font-size:1.4rem;
+    }
+
+
+    .btn{
+        width:55px;
+        height:55px;
+        font-size:1rem;
+    }
+
+
+    /* scientific hidden by default */
+
+    .scientific-panel{
+        display:none;
+        grid-template-columns:
+            repeat(4,1fr);
+        gap:0.6rem;
+    }
+
+    .scientific-panel.show{
+        display:grid;
+    }
+
+
+    /* comma hide */
+
+    .comma-btn{
+
+        display:none;
+    }
+    /* toggle button visible */
+    .toggle-btn{
+
+        display:flex;
+    }
+}
+
+   /* SMALL MOBILE */
+
+@media(max-width:420px){
+    .btn{
+        width:48px;
+        height:48px;
+        font-size:0.95rem;
+    }
+
+    .textarea{
+        font-size:1.1rem;
+    }
+}
 
