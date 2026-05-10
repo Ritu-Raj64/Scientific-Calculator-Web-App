@@ -48,17 +48,15 @@ A modern and responsive Scientific Calculator built using **HTML, CSS, and JavaS
 
 ## 💻 Desktop Mode
 
-![Desktop Calculator](./assets/desktop-1.png)
+![Desktop Calculator](./assets/desktop.png)
 
-![Desktop Scientific Mode](./assets/desktop-2.png)
 
 ---
 
 ## 📱 Mobile Mode
 
-![Mobile Normal](./assets/mobile-1.png)
+![Mobile Normal](./assets/mobile.png)
 
-![Mobile Scientific](./assets/mobile-2.png)
 
 ---
 
@@ -82,7 +80,6 @@ Scientific-Calculator/
 ├── assets/
 │   ├── parser.js
 │   ├── calculator.js
-│   ├── desktop-1.png
-│   ├── desktop-2.png
-│   ├── mobile-1.png
-│   └── mobile-2.png
+│   ├── tokenizer.js
+│   ├── desktop.png│  
+│   └── mobile.png
