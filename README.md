@@ -3,6 +3,13 @@
 A modern and responsive Scientific Calculator built using **HTML, CSS, and JavaScript** with support for advanced mathematical operations, keyboard input, and mobile responsive scientific mode.
 
 ---
+---
+
+# 🚀 Live Demo
+
+🔗 https://ritu-scientific-calculator.netlify.app/
+
+---
 
 # 🚀 Features
 
