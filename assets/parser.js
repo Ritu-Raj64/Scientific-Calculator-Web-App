@@ -5,6 +5,12 @@ import { tokenize } from "./tokenizer.js";
 export function evaluateExpression(expression) {
 
     try {
+        
+        expression = expression
+            .replace(/×/g, "*")
+            .replace(/÷/g, "/")
+            .replace(/−/g, "-");
+
 
         let tokens = tokenize(expression);
 
