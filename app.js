@@ -231,11 +231,10 @@ document.addEventListener("keydown", (event) => {
 
 });
  // toggler btn
-const toggleBtn =
-    document.querySelector(".toggle-btn");
+const toggleBtn = document.querySelector(".toggle-btn");
 
-const scientificPanel =
-    document.querySelector(".scientific-panel");
+const scientificPanel = document.querySelector(".scientific-panel");
+const btnContainer = document.querySelector(".btn-container");
 
 
 /* default visible */

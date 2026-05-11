@@ -5,7 +5,8 @@ html{
     padding:0;
     font-family:"Roboto", sans-serif;
     background:#000;
-    overflow-x:hidden;
+    overflow:hidden;
+    user-select: none;
 }
 
 
@@ -32,7 +33,7 @@ html{
     background:#111;
     border:4px solid #444;
     border-radius:2rem;
-    padding:1rem;
+    padding:0.85rem;
     box-sizing:border-box;
     display:flex;
     flex-direction:column;
@@ -76,8 +77,8 @@ html{
    /* BUTTON BASE */
 
 .btn{
-    width:60px;
-    height:60px;
+    width:48px;
+    height:48px;
     border-radius:50%;
     display:flex;
     align-items:center;
@@ -88,13 +89,12 @@ html{
     cursor:pointer;
     user-select:none;
     transition:0.2s;
-    font-size:1.2rem;
+    font-size:1.25rem;
     font-weight:500;
 }
 
 
 .btn:hover{
-
     background:
         rgba(255,255,255,0.16);
 }
@@ -136,8 +136,15 @@ html{
     grid-template-columns:repeat(6,1fr);
     gap:0.6rem;
     justify-items:center;
+    max-height:220px;
+    overflow-y:auto;
+    padding-right:4px;
+    
 }
+.scientific-panel::-webkit-scrollbar{
 
+    width:0;
+}
 
 /* show state */
 
@@ -150,7 +157,7 @@ html{
 .btn-container{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    gap:0.8rem;
+    gap:0.6rem;
     justify-items:center;
 }
 
@@ -176,28 +183,39 @@ html{
         max-width:380px;
         padding:1rem;
         border-radius:1.5rem;
+        
     }
 
     .textarea{
-        height:120px;
+        height:110px;
         font-size:1.4rem;
     }
 
 
     .btn{
-        width:55px;
-        height:55px;
+        width:40px;
+        height:40px;
         font-size:1rem;
     }
 
-
+    .normal-btn{
+        font-size: 1.2rem;
+    }
+    .normal2-btn{
+        font-size: 1.2rem;
+    }
+    .operator{
+        font-size: 1.5rem;
+    }
     /* scientific hidden by default */
 
     .scientific-panel{
         display:none;
         grid-template-columns:
-            repeat(4,1fr);
+            repeat(5,1fr);
         gap:0.6rem;
+        max-height: 200px;
+        
     }
 
     .scientific-panel.show{
@@ -205,12 +223,6 @@ html{
     }
 
 
-    /* comma hide */
-
-    .comma-btn{
-
-        display:none;
-    }
     /* toggle button visible */
     .toggle-btn{
 
@@ -222,13 +234,23 @@ html{
 
 @media(max-width:420px){
     .btn{
-        width:48px;
-        height:48px;
-        font-size:0.95rem;
+        width:40px;
+        height:40px;
+        font-size:0.9rem;
+        font-weight: 500;
     }
 
     .textarea{
-        font-size:1.1rem;
+        font-size:1.25rem;
+    }
+     .normal-btn{
+        font-size: 1.1rem;
+    }
+    .normal2-btn{
+        font-size: 1.1rem;
+    }
+    .operator{
+        font-size: 1.35rem;
     }
 }
 

@@ -8,13 +8,10 @@ function factorial(num) {
     return num * factorial(num - 1);
 }
 
-
 const calc = {
-
-    // =========================
+    
     // TRIGONOMETRIC FUNCTIONS
-    // =========================
-
+    
     sin: (x) => {
 
         let rad = x * Math.PI / 180;
@@ -35,12 +32,9 @@ const calc = {
 
         return Number(Math.tan(rad).toFixed(10));
     },
-
-
-    // =========================
+    
     // INVERSE TRIGONOMETRIC
-    // =========================
-
+    
     asin: (x) => {
 
         return Number(
@@ -62,11 +56,8 @@ const calc = {
         );
     },
 
-
-    // =========================
     // HYPERBOLIC FUNCTIONS
-    // =========================
-
+    
     sinh: (x) => {
 
         return Number(Math.sinh(x).toFixed(10));
@@ -81,54 +72,42 @@ const calc = {
 
         return Number(Math.tanh(x).toFixed(10));
     },
-
-
-    // =========================
+    
     // ROOT FUNCTIONS
-    // =========================
+
 
     sqrt: (x) => Math.sqrt(x),
 
     cbrt: (x) => Math.cbrt(x),
 
-
-    // =========================
     // LOG FUNCTIONS
-    // =========================
-
+    
     log: (x) => Math.log10(x),
 
     ln: (x) => Math.log(x),
 
     exp: (x) => Math.exp(x),
-
-
-    // =========================
-    // POWER FUNCTIONS
-    // =========================
+ 
+    // POWER FUNCTIONS 
 
     square: (x) => x ** 2,
 
     cube: (x) => x ** 3,
+  
+    root: (x, y) => {
 
-
-    // =========================
+        return Math.pow(x, 1 / y);
+    },
+  
     // RANDOM
-    // =========================
-
+   
     rand: () => Math.random(),
-
-
-    // =========================
+   
     // FACTORIAL
-    // =========================
-
+    
     fact: factorial,
-
-
-    // =========================
-    // COMBINATIONS & PERMUTATIONS
-    // =========================
+   
+    // COMBINATIONS & PERMUTATIONS   
 
     ncr: (n, r) => {
 
@@ -143,11 +122,8 @@ const calc = {
         return factorial(n) /
             factorial(n - r);
     },
-
-
-    // =========================
+   
     // CONSTANTS
-    // =========================
 
     pi: () => Math.PI,
 

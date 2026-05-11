@@ -230,6 +230,24 @@ function parsePrimary(tokens) {
     }
 
 
+if (token === "root") {
+
+    tokens.shift(); // remove (
+
+    let x = parsePrimary(tokens);
+
+    tokens.shift(); // remove ,
+
+    let y = parsePrimary(tokens);
+
+    tokens.shift(); // remove )
+
+    return calc.root(x, y);
+}
+
+
+
+
     if (token === "log") {
 
         tokens.shift();
