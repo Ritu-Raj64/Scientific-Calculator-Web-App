@@ -8,6 +8,15 @@ let isSecond = false;
 
 
 
+function focusDisplay(){
+
+    if(document.activeElement !== display){
+        display.focus();
+        
+    }
+}
+
+
 // INSERT FUNCTION
 
 function insertFunction(name) {
@@ -35,7 +44,7 @@ function insertFunction(name) {
             cursor + name.length
         );
 
-        display.focus();
+        display.focusDisplay();
     }
 
     // functions with brackets
@@ -53,7 +62,7 @@ function insertFunction(name) {
             cursor + name.length + 1
         );
 
-        display.focus();
+        display.focusDisplay();
     }
 }
 
@@ -78,7 +87,7 @@ function deleteValue() {
         );
     }
 
-    display.focus();
+    display.focusDisplay();
 }
 
 
@@ -88,7 +97,6 @@ function deleteValue() {
 buttons.forEach(button => {
 
     button.addEventListener("click", () => {
-
         let value = button.textContent.trim();
 
            // CLEAR
@@ -167,16 +175,17 @@ buttons.forEach(button => {
             cursor + value.length
         );
 
-        display.focus();
+        display.focusDisplay();
     });
 });
 
 // KEYBOARD SUPPORTS
 
 document.addEventListener("keydown", (event) => {
+    
     event.preventDefault();
     let key = event.key;
-
+    
     
     // ENTER
     
@@ -210,7 +219,6 @@ document.addEventListener("keydown", (event) => {
     if (allowedKeys.includes(key)) {
 
         event.preventDefault();
-
         let cursor = display.selectionStart;
 
         let text = display.value;
@@ -225,7 +233,7 @@ document.addEventListener("keydown", (event) => {
             cursor + 1
         );
 
-        display.focus();
+        display.focusDisplay();
     }
 
 
@@ -246,4 +254,6 @@ toggleBtn.addEventListener("click", () => {
 
     scientificPanel.classList.toggle("show");
 });
+
+
 

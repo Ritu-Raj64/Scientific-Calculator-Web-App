@@ -11,7 +11,6 @@ export function evaluateExpression(expression) {
             .replace(/÷/g, "/")
             .replace(/−/g, "-");
 
-
         let tokens = tokenize(expression);
 
         let result = parseExpression(tokens);
@@ -29,7 +28,6 @@ function parseExpression(tokens) {
 
     return parseAddSubtract(tokens);
 }
-
 
 function parseAddSubtract(tokens) {
 
@@ -50,8 +48,6 @@ function parseAddSubtract(tokens) {
 
     return value;
 }
-
-
 
 function parseMultiplyDivide(tokens) {
 
@@ -91,7 +87,6 @@ function parseMultiplyDivide(tokens) {
 
     return value;
 }
-
 
 function parsePower(tokens) {
 
