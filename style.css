@@ -6,7 +6,6 @@ html{
     font-family:"Roboto", sans-serif;
     background:#000;
     overflow:hidden;
-    user-select: none;
 }
 
 
@@ -91,6 +90,9 @@ html{
     transition:0.2s;
     font-size:1.25rem;
     font-weight:500;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
 }
 
 
